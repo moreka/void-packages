@@ -1,0 +1,18 @@
+# Template file for 'maildir-rank-addr'
+pkgname=maildir-rank-addr
+version=1.4.1
+revision=1
+build_style=go
+go_import_path="github.com/ferdinandyb/${pkgname}"
+go_ldflags="-X main.gVersion=$version"
+short_desc="Creates a ranked list of email addresses"
+maintainer="Mohammad Reza Karimi <m.r.karimi.j@gmail.com>"
+license="MIT"
+homepage="https://github.com/ferdinandyb/maildir-rank-addr"
+changelog="https://raw.githubusercontent.com/ferdinandyb/maildir-rank-addr/master/CHANGELOG.md"
+distfiles="https://github.com/ferdinandyb/maildir-rank-addr/archive/refs/tags/v${version}.tar.gz"
+checksum=5536cbfd0dd1f686dbe0bcf6a45d3c62659e5d7172b5df8ca3d257a6bf66b6cd
+
+post_install() {
+	vlicense LICENSE
+}

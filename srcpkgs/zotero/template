@@ -1,0 +1,32 @@
+# Template file for 'zotero'
+
+pkgname=zotero
+version=9.0.1
+revision=1
+short_desc="Zotero Standalone"
+maintainer="Mohammad Reza Karimi <m.r.karimi.j@gmail.com>"
+license="AGPL-3.0-or-later"
+homepage="https://www.zotero.org/download"
+depends="nss desktop-file-utils hicolor-icon-theme"
+distfiles="https://download.zotero.org/client/release/${version}/Zotero-${version}_linux-x86_64.tar.xz>zotero-${version}.tar.xz \
+	https://raw.githubusercontent.com/zotero/zotero/refs/heads/main/COPYING"
+checksum="b8f07bb44270fac2b482e146e194cebb0f063e1b241ac74cd5a8df5832795ed4 \
+	5b7dc919393650eef5f37b25cc399717159a7df5cdec98fa26c846346389bce6"
+
+do_extract() {
+	vsrccopy COPYING "${wrksrc}"
+	vsrcextract --strip-components=1 -C "${wrksrc}" "zotero-${version}.tar.xz"
+}
+
+do_install() {
+	vlicense COPYING
+	vmkdir usr/lib/zotero
+	vcopy * usr/lib/zotero
+	vbin "${FILESDIR}/zotero"
+	vinstall "${FILESDIR}/zotero.desktop" 644 usr/share/applications
+
+	for res in 32 64 128; do
+		vinstall icons/icon${res}.png 0644 usr/share/icons/hicolor/${res}x${res}/apps zotero.png
+	done
+	vinstall icons/symbolic.svg 0644 usr/share/icons/hicolor/symbolic/apps zotero-symbolic.svg
+}

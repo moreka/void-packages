@@ -1,0 +1,2 @@
+site="https://github.com/zotero/zotero/tags"
+pattern="(?<=refs/tags/)\K[0-9.]+(?=.tar.gz)"

@@ -1,0 +1,47 @@
+From: Mohammad Reza Karimi <m.r.karimi.j@gmail.com>
+Date: Mon, 27 Apr 2026 09:46:10 -0400
+Subject: [PATCH] add sigusr1 support
+
+---
+ main.c | 19 ++++++++++++++++++-
+ 1 file changed, 18 insertions(+), 1 deletion(-)
+
+diff --git a/main.c b/main.c
+index 0ce004d..fe9ac77 100644
+--- a/main.c
++++ b/main.c
+@@ -563,6 +563,7 @@ main(int argc, char *const *argv)
+     sigemptyset(&mask);
+     sigaddset(&mask, SIGINT);
+     sigaddset(&mask, SIGQUIT);
++    sigaddset(&mask, SIGUSR1);
+
+     sigprocmask(SIG_BLOCK, &mask, NULL);
+
+@@ -615,7 +616,23 @@ main(int argc, char *const *argv)
+             }
+
+             assert(count == sizeof(info));
+-            assert(info.ssi_signo == SIGINT || info.ssi_signo == SIGQUIT);
++            assert(info.ssi_signo == SIGINT ||
++                   info.ssi_signo == SIGQUIT ||
++                   info.ssi_signo == SIGUSR1);
++
++            if (info.ssi_signo == SIGUSR1) {
++                LOG_INFO("reloading image");
++#if defined(WBG_HAVE_SVG)
++                svg_free();
++#endif
++                fclose(fp);
++                fp = fopen(image_path, "rb");
++                tll_foreach(outputs, it) {
++                    if (it->item.configured)
++                        render(&it->item);
++                }
++                continue;
++            }
+
+             LOG_INFO("goodbye");
+             exit_code = EXIT_SUCCESS;
+--
+2.53.0

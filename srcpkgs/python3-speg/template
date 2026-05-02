@@ -1,0 +1,12 @@
+# Template file for 'python3-speg'
+pkgname=python3-speg
+version=0.3
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-pytools"
+short_desc="A PEG-based parser interpreter with memoization"
+maintainer="Mohammad Reza Karimi <m.r.karimi.j@gmail.com>"
+license="MIT"
+homepage="https://github.com/avakar/speg"
+distfiles="${PYPI_SITE}/s/speg/speg-${version}.zip"
+checksum=10cbef47e168dfc62f14db575cf1c428037a2b881cee6c3cfceda0439c243e71

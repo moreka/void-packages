@@ -1,0 +1,13 @@
+# Template file for 'python3-cson'
+pkgname=python3-cson
+version=0.8
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-pytools"
+depends="python3-speg"
+short_desc="Python parser for Coffeescript Object Notation (CSON)"
+maintainer="Mohammad Reza Karimi <m.r.karimi.j@gmail.com>"
+license="MIT"
+homepage="https://github.com/avakar/pycson"
+distfiles="${PYPI_SITE}/c/cson/cson-${version}.tar.gz"
+checksum=ee8c0166fcd1f51789887197e3e8354ac7befa396fc29706bceb5af25edc9e01

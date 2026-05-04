@@ -1,0 +1,26 @@
+# Template file for 'gentoo-bash-config'
+pkgname=gentoo-bash-config
+version=0.1.20250818
+revision=1
+build_style="fetch"
+hostmakedepends="curl"
+depends="bash"
+short_desc="Gentoo color terminal and bash prompt"
+maintainer="Mohammad Reza Karimi <m.r.karimi.j@gmail.com>"
+license="GPL-2.0-only"
+homepage="https://www.gentoo.org"
+distfiles="https://raw.githubusercontent.com/gentoo/gentoo/refs/heads/master/app-shells/bash/files/bashrc.d/10-gentoo-color-r2.bash
+ https://raw.githubusercontent.com/gentoo/gentoo/refs/heads/master/app-shells/bash/files/bashrc.d/10-gentoo-title-r3.bash"
+checksum="189766ac49f48880ce2507971fc3d8e15449976042d938bf6c6ad77e73793958
+ 68542878daa224d2b907eb2645f8c02c7f41d9053e310812d71e2930185119d0"
+skip_extraction="10-gentoo-color-r2.bash 10-gentoo-title-r3.bash"
+
+post_fetch() {
+	vsrccopy 10-gentoo-color-r2.bash .
+	vsrccopy 10-gentoo-title-r3.bash .
+}
+
+do_install() {
+	vinstall 10-gentoo-color-r2.bash 0644 etc/bash/bashrc.d 10-gentoo-color.bash
+	vinstall 10-gentoo-title-r3.bash 0644 etc/bash/bashrc.d 10-gentoo-title.bash
+}

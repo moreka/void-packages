@@ -209,22 +209,6 @@ index 4784a658..7a0d5f39 100644
           this->selected = size - 1;
           break;
  
-diff --git a/ScreenManager.c b/ScreenManager.c
-index e7e82e1d..9318b7c5 100644
---- a/ScreenManager.c
-+++ b/ScreenManager.c
-@@ -324,9 +324,11 @@ void ScreenManager_run(ScreenManager* this, Panel** lastFocus, int* lastKey, con
- 
-       switch (ch) {
-          case KEY_ALT('H'): ch = KEY_LEFT; break;
-+         case 'h': ch = KEY_LEFT; break;
-          case KEY_ALT('J'): ch = KEY_DOWN; break;
-          case KEY_ALT('K'): ch = KEY_UP; break;
-          case KEY_ALT('L'): ch = KEY_RIGHT; break;
-+         case 'l': ch = KEY_RIGHT; break;
-       }
- 
-       redraw = true;
 diff --git a/ScreenTabsPanel.c b/ScreenTabsPanel.c
 index e48e5fb8..6f152ce6 100644
 --- a/ScreenTabsPanel.c

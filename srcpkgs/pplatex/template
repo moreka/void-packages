@@ -1,0 +1,23 @@
+# Template file for 'pplatex'
+pkgname=pplatex
+version=1.0
+revision=1
+build_style=cmake
+hostmakedepends="pkg-config git"
+makedepends="pcre-devel"
+depends=""
+short_desc="Pretty-Print LaTeX"
+maintainer="Mohammad Reza Karimi <m.r.karimi.j@gmail.com>"
+license="MIT"
+homepage="https://github.com/stefanhepp/pplatex"
+
+do_fetch() {
+	git clone https://github.com/stefanhepp/pplatex.git ${wrksrc}
+	cd ${wrksrc}
+	git reset --hard 9f6cfb23c3b578f14ad2664cd754cb4a66dc790e
+}
+
+do_install() {
+	cd ${cmake_builddir:=build}
+	vbin src/pplatex
+}

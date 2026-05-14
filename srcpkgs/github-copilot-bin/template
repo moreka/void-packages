@@ -1,0 +1,25 @@
+# Template file for 'github-copilot-bin'
+pkgname=github-copilot-bin
+version=1.0.45
+revision=1
+short_desc="GitHub Copilot CLI"
+maintainer="Mohammad Reza Karimi <m.r.karimi.j@gmail.com>"
+license="custom:GithubCopilot"
+homepage="https://github.com/github/copilot-cli"
+changelog="https://github.com/github/copilot-cli/blob/main/changelog.md"
+distfiles="https://github.com/github/copilot-cli/releases/download/v${version}/copilot-linux-x64.tar.gz
+	https://github.com/github/copilot-cli/blob/main/LICENSE.md"
+checksum="f93d872de15edd5133a6f8de5e72e461313187c3a23d3996e64862440a3978a8
+	ad7a3d41058d8399cb1d00b0062a5fbebc94ba979186404cbdbd4b691b3da291"
+nopie=yes
+restricted=yes
+
+do_extract() {
+	vsrccopy LICENSE.md "${wrksrc}"
+	vsrcextract --strip-components=0 -C ${wrksrc} copilot-linux-x64.tar.gz
+}
+
+do_install() {
+	vlicense LICENSE.md LICENSE
+	vbin copilot
+}

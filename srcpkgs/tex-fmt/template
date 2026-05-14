@@ -1,0 +1,11 @@
+# Template file for 'tex-fmt'
+pkgname=tex-fmt
+version=0.5.7
+revision=1
+build_style=cargo
+short_desc="An extremely fast LaTeX formatter written in Rust"
+maintainer="Mohammad Reza Karimi <m.r.karimi.j@gmail.com>"
+license="MIT"
+homepage="https://github.com/WGUNDERWOOD/tex-fmt"
+distfiles="https://github.com/WGUNDERWOOD/tex-fmt/archive/refs/tags/v${version}.tar.gz"
+checksum=fee9ccd8f13be00cf437ce73928892eb0b55349bd4c81e226bc3fd3cb9de644c

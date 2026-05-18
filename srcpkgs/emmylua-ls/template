@@ -1,6 +1,6 @@
 # Template file for 'emmylua-ls'
 pkgname=emmylua-ls
-version=0.22.0
+version=0.23.1
 revision=1
 build_style=cargo
 build_helper=rust
@@ -15,7 +15,7 @@ license="MIT"
 homepage="https://github.com/EmmyLuaLs/emmylua-analyzer-rust"
 changelog="https://raw.githubusercontent.com/EmmyLuaLs/emmylua-analyzer-rust/main/CHANGELOG.md"
 distfiles="https://github.com/EmmyLuaLs/emmylua-analyzer-rust/archive/refs/tags/${version}.tar.gz"
-checksum=d1b7eec2f607b58a2bb3599530de3ef206911f521d4e5a4eb229d1fd6fbee7c2
+checksum=c0923591e7005e0b4cf017687e9fe0bcdbfae0ab954fb2b2c5961b6a14672856
 
 post_install() {
 	vlicense LICENSE

@@ -1,0 +1,11 @@
+--- a/setup.py
++++ b/setup.py
+@@ -2308,7 +2308,7 @@
+         elif args.action == 'build-frozen-tools':
+             build_static_kittens(args, launcher_dir=args.prefix, for_freeze=True)
+         elif args.action == 'linux-package':
+-            build(args, native_optimizations=False)
++            build(args, native_optimizations=True)
+             package(args, bundle_type='linux-package')
+         elif args.action == 'linux-freeze':
+             build(args, native_optimizations=False)

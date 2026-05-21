@@ -22,6 +22,7 @@ python_version=3
 nopie_files="/usr/bin/kitten"
 
 LDFLAGS+=" -Wl,-z,stack-size=2097152"
+CFLAGS+=" -Wno-error=maybe-uninitialized"
 
 # TIOCSWINSZ on ppc overflows signed int, used in ioctl()
 # glibc defines it with ulong, musl with int (should be harmless)

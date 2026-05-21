@@ -1,7 +1,7 @@
 # Template file for 'zotero'
 
 pkgname=zotero
-version=9.0.2
+version=9.0.3
 revision=1
 short_desc="Zotero Standalone"
 maintainer="Mohammad Reza Karimi <m.r.karimi.j@gmail.com>"
@@ -10,8 +10,8 @@ homepage="https://www.zotero.org/download"
 depends="nss desktop-file-utils hicolor-icon-theme"
 distfiles="https://download.zotero.org/client/release/${version}/Zotero-${version}_linux-x86_64.tar.xz>zotero-${version}.tar.xz \
 	https://raw.githubusercontent.com/zotero/zotero/refs/heads/main/COPYING"
-checksum="a5e69bf4ea45a92824e0e74a624c8c8227a38214e3b5c45dcab2b5d77cc280cf \
-	5b7dc919393650eef5f37b25cc399717159a7df5cdec98fa26c846346389bce6"
+checksum="eac751d855b68cfbcf9628699d1bbd19765004ed845d56a77faa035f17a97f6c
+ 5b7dc919393650eef5f37b25cc399717159a7df5cdec98fa26c846346389bce6"
 
 do_extract() {
 	vsrccopy COPYING "${wrksrc}"

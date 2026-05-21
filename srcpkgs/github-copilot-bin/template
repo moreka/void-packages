@@ -1,6 +1,6 @@
 # Template file for 'github-copilot-bin'
 pkgname=github-copilot-bin
-version=1.0.48
+version=1.0.51
 revision=1
 short_desc="GitHub Copilot CLI"
 maintainer="Mohammad Reza Karimi <m.r.karimi.j@gmail.com>"
@@ -9,8 +9,8 @@ homepage="https://github.com/github/copilot-cli"
 changelog="https://github.com/github/copilot-cli/blob/main/changelog.md"
 distfiles="https://github.com/github/copilot-cli/releases/download/v${version}/copilot-linux-x64.tar.gz
 	https://github.com/github/copilot-cli/blob/main/LICENSE.md"
-checksum="f2a1278c3c2fe22cbcbe51c0d2ee251f7621d2ea2211fe1c7b3668ab3b363ffd
- 58a39b28f86296abe90b386f38aa2c7ffd46eb2c12a28d3c1cb38ff33adb3905"
+checksum="9be82361b57409842f1188a3e3cd8b85da2e0c930b7fe6b60a70d79f5d5d38b4
+ 22a7601fc6fa65a08d25476c9e43a562b5e83749f1cda13b8de2fd7d5d3f1e76"
 nopie=yes
 restricted=yes
 
